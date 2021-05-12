@@ -1,5 +1,7 @@
 import hashlib
 from binascii import unhexlify, hexlify
+import struct
+import math
 
 class Blocks:
     version = "01000000"
@@ -8,7 +10,8 @@ class Blocks:
     timestamp = "1305998791"
     diff = "f2b9441a"
     nonce = "00000000"
-    maked_diff = ""
+    maked_diff = 244112.49
+    difstr = ""
     firsthex = ""
     block_hash = ""
 
@@ -26,13 +29,17 @@ class Blocks:
 
     def mine_block(self):
         print("Mining blocks...")
-        print("Difficulty is: ", int(self.diff, 8))
+        print("Difficulty is: ", self.maked_diff)
         self.make_diff_str()
         #while not 
 
     def make_diff_str(self):
-        for _ in range(0, int(self.diff)):
-            self.maked_diff += "0"
+        for _ in range(0, math.floor(self.maked_diff)):#int(self.diff, 16)):
+            self.difstr += "0"
+
+    def hex2float(self, r):
+        return struct.unpack('!f', bytes.fromhex(r))[0]
+        
 
 bk = Blocks()
 data = bk.get_block_hash()
