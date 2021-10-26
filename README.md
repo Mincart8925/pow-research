@@ -1,1 +1,1 @@
-# hanlim-high-school-blockchain
+# Proof-of-Work Research
