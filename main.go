@@ -171,7 +171,7 @@ func main() {
 		}
 
 		fmt.Println("[Diff] ", target_diff)
-		fmt.Println("[Cnt] ", count)
+		fmt.Println("[Cnt] ", i)
 		fmt.Print("\n\n")
 		time_total = append(time_total, time.Duration(eltime.Milliseconds()))
 	}
