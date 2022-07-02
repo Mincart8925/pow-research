@@ -1,1 +1,1 @@
-# Proof-of-Work Research
+# PoW
